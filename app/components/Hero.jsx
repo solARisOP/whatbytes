@@ -14,7 +14,7 @@ function Hero() {
 
     return (
         <>
-        <div className="px-8 flex-1">
+        <div className="px-2 sm:px-8 flex-1">
             <h3 className="my-5">Skill Test</h3>
 
             <div className="flex flex-wrap gap-5">
@@ -24,58 +24,58 @@ function Hero() {
                     <div className="flex justify-between items-center border border-slate-200 rounded-md p-5 gap-3">
                         <img src="./html.svg" alt="" className="h-20" />
                         <div className="flex flex-col justify-between">
-                            <h2 className="text-lg font-bold">
+                            <h2 className="text-md sm:text-lg font-bold">
                                 Hyper Text Markup Language
                             </h2>
                             <p className="font-thin"> Questions: 15 | Duration: 15 mins | Submitted on 5 June 2021 </p>
                         </div>
-                        <button className="bg-blue-950 rounded-lg py-2 px-4 text-white" onClick={openModal}>Update</button>
+                        <button className="bg-blue-950 rounded-lg py-1 sm:py-2 px-2 sm:px-4 text-white" onClick={openModal}>Update</button>
                     </div>
 
                     <div className="border border-slate-200 rounded-md p-5">
-                        <h2 className="text-lg font-bold mb-2">
+                        <h2 className="text-md sm:text-lg font-bold mb-2">
                             Quick Statistics
                         </h2>
                         <div className="flex justify-between items-center">
-                            <div className="flex gap-5 items-center px-3">
-                                <div className="h-10 w-10 rounded-full bg-slate-100 flex justify-center items-center">
-                                    <img src="./cup.svg" alt="" className="h-6" />
+                            <div className="flex gap-5 items-center px-1 sm:px-3">
+                                <div className="h-5 w-5 sm:h-10 sm:w-10 rounded-full bg-slate-100 flex justify-center items-center">
+                                    <img src="./cup.svg" alt="" className="h-3 sm:h-6" />
                                 </div>
                                 <div>
                                     <h1 className="font-bold">{data.rank}</h1>
-                                    <p className="font-thin text-sm">YOUR RANK</p>
+                                    <p className="font-thin text-xs sm:text-sm">YOUR RANK</p>
                                 </div>
                             </div>
 
                             <div className="border-r border-r-slate-200 h-14" />
 
-                            <div className="flex gap-5 items-center px-3">
-                                <div className="h-10 w-10 rounded-full bg-slate-100 flex justify-center items-center">
-                                    <img src="/calendar.svg" alt="" className="h-6" />
+                            <div className="flex gap-5 items-center px-1 sm:px-3">
+                                <div className="h-5 w-5 sm:h-10 sm:w-10 rounded-full bg-slate-100 flex justify-center items-center">
+                                    <img src="/calendar.svg" alt="" className="h-3 sm:h-6" />
                                 </div>
                                 <div>
                                     <h1 className="font-bold">{data.percentile}%</h1>
-                                    <p className="font-thin text-sm">PERCENTILE</p>
+                                    <p className="font-thin text-xs sm:text-sm">PERCENTILE</p>
                                 </div>
                             </div>
 
                             <div className="border-r border-r-slate-200 h-14" />
 
-                            <div className="flex gap-5 items-center px-3">
-                                <div className="h-10 w-10 rounded-full bg-slate-100 flex justify-center items-center">
-                                    <img src="/check.svg" alt="" className="h-6" />
+                            <div className="flex gap-5 items-center px-1 sm:px-3">
+                                <div className="h-5 w-5 sm:h-10 sm:w-10 rounded-full bg-slate-100 flex justify-center items-center">
+                                    <img src="/check.svg" alt="" className="h-3 sm:h-6" />
                                 </div>
                                 <div>
                                     <h1 className="font-bold">{data.score}/15</h1>
-                                    <p className="font-thin text-sm">CORRECT ANSWERS</p>
+                                    <p className="font-thin text-xs sm:text-sm">CORRECT ANSWERS</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="border border-slate-200 rounded-md p-5 flex flex-col gap-5">
-                        <h2 className="text-lg font-bold mb-2">
-                            Quick Statistics
+                        <h2 className="text-md sm:text-lg font-bold mb-2">
+                            Comparsion Graph
                         </h2>
 
                         <p>
@@ -89,7 +89,7 @@ function Hero() {
                 <div className="flex-1 flex flex-col gap-6 mb-5">
 
                     <div className="flex flex-col border border-slate-200 rounded-md p-5 gap-3">
-                        <h2 className="text-lg font-bold">
+                        <h2 className="text-md sm:text-lg font-bold">
                             Syllabus Wise Analysis
                         </h2>
 
@@ -136,7 +136,7 @@ function Hero() {
 
                     <div className="flex flex-col border border-slate-200 rounded-md p-5 gap-3 items-center">
                         <div className="flex justify-between items-center w-full">
-                            <h2 className="text-lg font-bold">
+                            <h2 className="text-md sm:text-lg font-bold">
                                 Question Analysis
                             </h2>
                             <h2 className="text-lg font-bold text-blue-500">{data.score}/15</h2>
