@@ -4,7 +4,7 @@ import Hero from './Hero'
 
 function Dashboard() {
 	return (
-		<div className='flex h-full w-full'>
+		<div className='flex flex-1'>
 			<Sidebar />
 			<Hero />
 		</div>

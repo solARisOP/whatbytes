@@ -1,22 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ReferenceLine, ResponsiveContainer } from 'recharts';
+
+const blob = [{ percentile: 0, students: 2 },
+    { percentile: 20, students: 4 },
+    { percentile: 50, students: 14 },
+    { percentile: 75, students: 1 },
+    { percentile: 78, students: 1 },
+    { percentile: 100, students: 28 }]
 
 const PercentileGraph = () => {
     const myPercentile = useSelector(state => state.user.percentile)
-
-    const [data, setData] = useState(
-        [{ percentile: 0, students: 2 },
-        { percentile: 20, students: 4 },
-        { percentile: 50, students: 14 },
-        { percentile: 75, students: 1 },
-        { percentile: 78, students: 1 },
-        { percentile: 100, students: 28 }])
+    const [data, setData] = useState(blob)
 
     useEffect(() => {
-        setData(arr => {
+        setData(() => {
             let flag = true
-            let newArr = arr.map(x => {
+            let newArr = blob.map(x => {
                 if (x.percentile == myPercentile) {
                     x.students++;
                     flag = false;
@@ -37,27 +37,26 @@ const PercentileGraph = () => {
             }
             return newArr
         })
-        
     }, [myPercentile])
-    console.log(data);
 
     return (
-        <LineChart width={600} height={400} data={data}>
-            <XAxis dataKey="percentile" type="number" domain={[0, 100]} ticks={[0, 25, 50, 75, 100]} label={{
-                value: 'percentile',
-                position: 'bottom'
-            }} />
-            <YAxis ticks={[0, 10, 20, 30, 40]} label={{
-                value: 'Number of Students',
-                angle: -90,
-                position: 'insideLeft',
-            }} />
-            <CartesianGrid strokeDasharray="3 3" />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="students" stroke="#8884d8" />
-            <ReferenceLine x={myPercentile} stroke="#a5cbfc" label="your Percentile" />
-        </LineChart>
+        <ResponsiveContainer className="w-full" height={350}>
+            <LineChart data={data}>
+                <XAxis dataKey="percentile" type="number" domain={[0, 100]} ticks={[0, 25, 50, 75, 100]} label={{
+                    value: 'percentile',
+                    position: 'bottom',
+                    offset: -10
+                }} />
+                <YAxis ticks={[0, 10, 20, 30, 40]} label={{
+                    value: 'Number of Students',
+                    angle: -90,
+                    position: 'insideLeft',
+                }} />
+                <Tooltip />
+                <Line type="monotone" dataKey="students" stroke="#8884d8" />
+                <ReferenceLine x={myPercentile} stroke="#a5cbfc" label="your Percentile" />
+            </LineChart>
+        </ResponsiveContainer>
     );
 };
 

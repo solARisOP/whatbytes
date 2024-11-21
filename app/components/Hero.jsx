@@ -14,7 +14,7 @@ function Hero() {
 
     return (
         <>
-        <div className="px-8 w-full h-full">
+        <div className="px-8 flex-1">
             <h3 className="my-5">Skill Test</h3>
 
             <div className="flex flex-wrap gap-5">
