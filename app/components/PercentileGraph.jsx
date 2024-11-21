@@ -47,11 +47,6 @@ const PercentileGraph = () => {
                     position: 'bottom',
                     offset: -10
                 }} />
-                <YAxis ticks={[0, 10, 20, 30, 40]} label={{
-                    value: 'Number of Students',
-                    angle: -90,
-                    position: 'insideLeft',
-                }} />
                 <Tooltip />
                 <Line type="monotone" dataKey="students" stroke="#8884d8" />
                 <ReferenceLine x={myPercentile} stroke="#a5cbfc" label="your Percentile" />
