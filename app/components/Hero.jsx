@@ -139,7 +139,7 @@ function Hero() {
                             <h2 className="text-lg font-bold">
                                 Question Analysis
                             </h2>
-                            <h2 className="text-lg font-bold text-blue-500">10/15</h2>
+                            <h2 className="text-lg font-bold text-blue-500">{data.score}/15</h2>
                         </div>
 
                         <p><strong>You scored {data.score} question correct out of 15.</strong> However it still needs some improvements</p>
